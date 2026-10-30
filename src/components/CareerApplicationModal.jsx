@@ -107,7 +107,7 @@ function CareerApplicationModalDialog({ onClose, selectedPlan }) {
       // 1. Prepare payload with exact columns existing in bookings table
       const bookingPayload = {
         package_id: selectedPlan.id || 'career-mentorship',
-        package_name: selectedPlan.name || 'Career Counselling',
+        package_name: selectedPlan.name || 'Career Mentorship Program',
         name: formData.name.trim(),
         email: null,
         age: formData.age ? parseInt(formData.age, 10) : null,
@@ -217,7 +217,7 @@ function CareerApplicationModalDialog({ onClose, selectedPlan }) {
           console.log('Update not allowed by RLS, inserting receipt booking record...');
           const receiptPayload = {
             package_id: selectedPlan.id || 'career-mentorship',
-            package_name: `${selectedPlan.name || 'Career Counselling'} (Receipt Uploaded)`,
+            package_name: `${selectedPlan.name || 'Career Mentorship Program'} (Receipt Uploaded)`,
             name: formData.name.trim(),
             email: null,
             age: formData.age ? parseInt(formData.age, 10) : null,

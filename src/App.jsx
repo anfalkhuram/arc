@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './HomePage';
-import CareerCounsellingPage from './CareerCounsellingPage';
+import CareerMentorshipPage from './CareerMentorshipPage';
 import BookingPage from './components/BookingPage';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsAndConditions from './components/TermsAndConditions';
@@ -28,8 +28,9 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/career-counselling" element={<CareerCounsellingPage />} />
-          <Route path="/career" element={<CareerCounsellingPage />} />
+          <Route path="/career-mentorship" element={<CareerMentorshipPage />} />
+          <Route path="/career-counselling" element={<CareerMentorshipPage />} />
+          <Route path="/career" element={<CareerMentorshipPage />} />
           <Route path="/booking" element={<BookingPage />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsAndConditions />} />

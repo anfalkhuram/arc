@@ -105,7 +105,7 @@ export default function Navbar() {
     }
   };
 
-  const isMoreActive = location.pathname === '/career-counselling';
+  const isMoreActive = ['/career-mentorship', '/career-counselling', '/career'].includes(location.pathname);
 
   return (
     <>
@@ -204,15 +204,15 @@ export default function Navbar() {
                       <button
                         type="button"
                         role="menuitem"
-                        onClick={() => handleNavigate('/career-counselling')}
+                        onClick={() => handleNavigate('/career-mentorship')}
                         className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium transition-colors flex items-center justify-between cursor-pointer border-none bg-transparent outline-none focus-visible:ring-2 focus-visible:ring-[var(--neu-accent)] ${
-                          location.pathname === '/career-counselling'
+                          isMoreActive
                             ? 'text-[var(--neu-accent)] bg-[var(--neu-accent)]/10 font-semibold'
                             : 'text-stone-700 dark:text-stone-300 hover:bg-stone-200/70 dark:hover:bg-stone-800/80 hover:text-[var(--neu-accent)]'
                         }`}
                       >
-                        <span>Career Counselling</span>
-                        {location.pathname === '/career-counselling' && (
+                        <span>Career Mentorship</span>
+                        {isMoreActive && (
                           <span className="w-1.5 h-1.5 rounded-full bg-[var(--neu-accent)]" />
                         )}
                       </button>
@@ -326,15 +326,15 @@ export default function Navbar() {
                     >
                       <button
                         type="button"
-                        onClick={() => handleNavigate('/career-counselling')}
+                        onClick={() => handleNavigate('/career-mentorship')}
                         className={`text-left py-2 px-3 rounded-lg text-sm font-medium transition-colors cursor-pointer border-none bg-transparent flex items-center justify-between ${
-                          location.pathname === '/career-counselling'
+                          isMoreActive
                             ? 'text-[var(--neu-accent)] bg-[var(--neu-accent)]/10 font-semibold'
                             : 'text-stone-600 dark:text-stone-400 hover:text-[var(--neu-accent)]'
                         }`}
                       >
-                        <span>Career Counselling</span>
-                        {location.pathname === '/career-counselling' && (
+                        <span>Career Mentorship</span>
+                        {isMoreActive && (
                           <span className="w-1.5 h-1.5 rounded-full bg-[var(--neu-accent)]" />
                         )}
                       </button>
